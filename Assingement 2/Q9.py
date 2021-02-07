@@ -1,7 +1,16 @@
-a=int(input("Enter 2 digit number:"))
-r=0
-while(a>0):
-    b=a%10
-    r=(r*10)+b
-    a=a//10
-print("Reverse of the given number is: ",r)
+# WAP to input 3 side of a  
+# triangle and prints its type (i.e  Equilateral/Isosceles/Scalene).
+import re
+x, y, z = input("Enter the length of three side of the triangle: ").split()
+ 
+if (re.match('^[+]?([0-9]*[.])?[0-9]+$',x) and
+   re.match('^[+]?([0-9]*[.])?[0-9]+$',y) and
+   re.match('^[+]?([0-9]*[.])?[0-9]+$',z)):
+   if x==y==z:
+       print("Equilateral")
+   elif x==z or y==z or x==y:
+       print("Isosceles")
+   else:
+       print("Scalene")
+else:
+     print("please enter valid input")
